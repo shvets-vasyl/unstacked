@@ -1,0 +1,37 @@
+@use "./utils" as *;
+
+.h1 {
+	font-size: 3.5rem;
+	line-height: 3.625rem;
+	text-transform: uppercase;
+
+	@include mobile {
+		font-size: 2rem;
+		line-height: 2rem;
+	}
+}
+
+.h2 {
+	font-size: 3rem;
+	line-height: 3.125rem;
+	text-transform: uppercase;
+
+	@include mobile {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+	}
+}
+
+.p1 {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	@include mobile {
+		font-size: .75rem;
+		line-height: 1rem;
+	}
+}
+.p2 {
+	font-size: .875rem;
+	line-height: 1.25rem;
+	font-family: var(--font-bold);
+}

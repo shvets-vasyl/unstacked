@@ -1,0 +1,35 @@
+@use "./utils" as *;
+
+// viewport
+
+:root {
+  --viewport: 1440;
+
+  @include mobile {
+    --viewport: 375;
+  }
+}
+
+// fonts
+
+:root {
+  --font-regular: "FigtreeRegular";
+  --font-bold: "FigtreeBold";
+  --font-semibold: "FigtreeSemiBold";
+}
+
+// transitions
+
+:root {
+  --default-ease: cubic-bezier(0.24, 1, 0.36, 1);
+}
+
+// colors
+
+:root {
+  --c-black: #080808;
+  --c-white: #EDEDED;
+  --c-accent: #FF8E3D;
+  --c-grey: #1C1C1C;
+  --c-grey2: #818181;
+}
