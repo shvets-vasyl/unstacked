@@ -30,7 +30,7 @@
 					</div>
 				</div>
 
-				<a class="presale-btn" href="#" target="_blank">
+				<a class="presale-btn" href="https://presale2.unstaked.com" target="_blank">
 					<CommonButton text="Join now" />
 				</a>
 			</div>

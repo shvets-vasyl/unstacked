@@ -2,6 +2,10 @@
   <main class="main-page">
 		<MainHero />
 		<MainSum />
+		<MainJoin />
+		<MainJourney />
+		<MainTokenomics />
+		<MainFooter />
   </main>
 </template>
 <script setup lang="ts">
@@ -13,7 +17,6 @@ onMounted(() => {
 </script>
 <style scoped lang="scss">
 .main-page {
-	overflow: hidden;
 	position: relative;
 	opacity: 0;
 }
