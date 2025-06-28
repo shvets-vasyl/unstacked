@@ -34,4 +34,7 @@
 	font-size: .875rem;
 	line-height: 1.25rem;
 	font-family: var(--font-bold);
+	@include mobile {
+		font-size: .75rem;
+	}
 }

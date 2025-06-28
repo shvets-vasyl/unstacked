@@ -30,6 +30,9 @@ defineProps<{
     0% 50%,
     0 0.6875rem
   );
+	@include mobile {
+		height: 2.5rem;
+	}
 }
 .btn-template {
 	display: flex;

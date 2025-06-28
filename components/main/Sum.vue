@@ -18,12 +18,14 @@
 
 
 			<div class="content">
-				<SvgSumBox />
+				<SvgSumBox class="desk" />
+				<SvgSumBoxMob class="mob" />
 
 				<div class="info">
 					<div class="head">
 						<div class="stage">
-							<SvgSumStage />
+							<SvgSumStage class="desk" />
+							<SvgSumStageMob class="mob" />
 
 							<div class="stage-content">
 								<p class="stage-text p2">Stage 1</p>
@@ -39,7 +41,8 @@
 							</CommonBox>
 						</div>
 						<div class="listing">
-							<SvgSumListing />
+							<SvgSumListing class="desk" />
+							<SvgSumListingMob class="mob" />
 
 							<div class="listing-content">
 								<p class="listing-text p2">Listing</p>
@@ -50,7 +53,8 @@
 
 					<div class="body">
 						<div class="amount">
-							<SvgField />
+							<SvgField class="desk" />
+							<SvgFieldMob class="mob" />
 
 							<p class="p1 field-text">Enter Amount</p>
 							<input
@@ -66,7 +70,8 @@
 						</div>
 
 						<div class="receive">
-							<SvgField />
+							<SvgField class="desk" />
+							<SvgFieldMob class="mob" />
 
 							<p class="p1 field-text">You Receive</p>
 							<input
@@ -121,6 +126,9 @@ const result = computed(() => {
 	top: 0;
 	right: 0;
 	text-transform: uppercase;
+	@include mobile {
+		display: none;
+	}
 }
 .tag .p1 {
 	font-family: var(--font-semibold);
@@ -132,14 +140,24 @@ const result = computed(() => {
 .title {
 	width: 55rem;
 	margin-bottom: 1.5rem;
+	@include mobile {
+		width: 100%;
+	}
 }
 .descr {
 	width: 38.4375rem;
+	@include mobile {
+		width: 100%;
+	}
 }
 .content {
 	width: 57.5rem;
 	margin: 5.875rem auto 2.5rem;
 	position: relative;
+	@include mobile {
+		width: calc(100% + 1.4rem);
+		margin: 2.5rem -0.7rem 1rem;
+	}
 }
 .text {
 	font-size: 2rem;
@@ -150,11 +168,20 @@ const result = computed(() => {
 	margin: 3.375rem auto 0;
 	color: var(--c-accent);
 	text-shadow: 0 0 .75rem rgba(255, 142, 61, 0.65);
+	@include mobile {
+		font-size: 1rem;
+		line-height: 100%;
+		margin: 2.5rem auto 1rem;
+		width: 16.875rem;
+	}
 }
 .btn {
 	width: 13rem;
 	display: block;
 	margin: 0 auto;
+	@include mobile {
+		width: 100%;
+	}
 }
 .info {
 	position: absolute;
@@ -162,6 +189,9 @@ const result = computed(() => {
 	left: 0;
 	top: 0;
 	padding: 3.5rem;
+	@include mobile {
+		padding: 2.2rem 1.8rem;
+	}
 }
 .head {
 	display: grid;
@@ -171,9 +201,19 @@ const result = computed(() => {
 	padding-bottom: 3.5rem;
 	border-bottom: .0625rem solid var(--c-grey);
 	margin-bottom: 5rem;
+	@include mobile {
+		grid-template-columns: 1fr 1fr;
+		column-gap: 0.5rem;
+		padding-bottom: 1.5rem;
+		margin-bottom: 3rem;
+	}
 }
 .head:deep(.box) {
 	height: 2.5rem;
+	@include mobile {
+		height: 2rem;
+		margin-top: 1rem;
+	}
 }
 .current-info {
 	display: flex;
@@ -188,6 +228,27 @@ const result = computed(() => {
 .stage, .listing {
 	position: relative;
 }
+.stage {
+	@include mobile {
+		order: 1;
+	}
+}
+.listing {
+	@include mobile {
+		order: 2;
+	}
+}
+.listing {
+	@include mobile {
+		order: 2;
+	}
+}
+.current {
+	@include mobile {
+		order: 3;
+		grid-column: span 2;
+	}
+}
 .stage-content, .listing-content {
 	position: absolute;
 	inset: 0;
@@ -195,17 +256,29 @@ const result = computed(() => {
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 1rem;
+	@include mobile {
+		padding: 0 0.5rem;
+	}
 }
 .stage-price, .listing-price {
 	color: var(--c-black);
 	font-size: .625rem;
 	margin-right: -0.3125rem;
+	@include mobile {
+		margin-right: 0;
+		padding-right: .25rem;
+	}
 }
 
 .body {
 	display: grid;
 	grid-template-columns: 22.125rem 2.75rem 22.125rem;
 	justify-content: space-between;
+	@include mobile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }
 .amount, .receive {
 	position: relative;
@@ -230,5 +303,12 @@ const result = computed(() => {
 	left: 0;
 	font-family: var(--font-semibold);
 	margin-bottom: .375rem;
+}
+.arrow {
+	@include mobile {
+		width: 2rem;
+		margin: .5rem 0 2rem;
+		transform: rotate(90deg);
+	}
 }
 </style>

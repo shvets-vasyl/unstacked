@@ -51,7 +51,7 @@
 	padding: 2.5rem;
 
 	@include mobile {
-		padding: .75rem;
+		padding: 1.5rem .75rem;
 	}
 }
 .lines {

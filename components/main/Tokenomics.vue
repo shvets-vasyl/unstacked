@@ -85,25 +85,42 @@ const items = [
 }
 .tokenomics-title {
   margin-bottom: 2rem;
+	@include mobile {
+		margin-bottom: 1.5rem;
+	}
 }
 .descr {
 	width: 27rem;
 	margin-bottom: 3.375rem;
+	@include mobile {
+		width: 100%;
+		margin-bottom: 2.5rem;
+	}
 }
 .content {
   display: flex;
-
+	@include mobile {
+		flex-direction: column;
+	}
 }
 .left img {
 	width: 39.375rem;
 	margin-left: -5rem;
 	margin-top: -10rem;
 	margin-bottom: -3.5rem;
+	@include mobile {
+		width: 100%;
+		margin: 0;
+	}
 }
 .right {
 	flex: 0 0 48rem;
 	position: relative;
 	left: -2.5rem;
+	@include mobile {
+		flex: 1;
+		left: 0;
+	}
 }
 .info-content {
 	position: absolute;

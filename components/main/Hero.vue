@@ -1,6 +1,7 @@
 <template>
 	<CommonSectionTemplate>
-		<img src="/images/hero-bg.png" class="inner-img" alt="">
+		<img src="/images/hero-bg.png" class="inner-img desk" alt="">
+		<img src="/images/hero-bg-mob.png" class="inner-img mob" alt="">
 		<div class="hero">
 			<div class="logo">
 				<IconLogo />
@@ -52,9 +53,19 @@
 	margin-left: -5rem;
 	margin-top: -5.3125rem;
 	margin-bottom: -10rem;
+
+	@include mobile {
+		width: 15rem;
+		margin-left: -3.5rem;
+		margin-bottom: -7rem;
+		margin-top: -4.5rem;
+	}
 }
 .title {
 	margin-bottom: 2.5rem;
+	@include mobile {
+		margin-bottom: 1.5rem;
+	}
 }
 .descr1 {
 	margin-bottom: 1.5rem;
@@ -62,14 +73,25 @@
 .descr2 {
 	width: 31.875rem;
 	margin-bottom: 1.5rem;
+	@include mobile {
+		width: 100%;
+		margin-bottom: 21.375rem;
+	}
 }
 .content {
 	width: 35.6875rem;
+	@include mobile {
+		width: 100%;
+	}
 }
 .presale {
 	width: 20.125rem;
 	position: relative;
 	margin-left: -1.375rem;
+	@include mobile {
+		width: 22.65rem;
+		margin-left: -1.6rem;
+	}
 }
 .presale-box {
 	font-size: .875rem;
@@ -83,6 +105,9 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	white-space: nowrap;
+	@include mobile {
+		font-size: .75rem;
+	}
 }
 .presale-box span {
 	color: #40ED47;
@@ -95,6 +120,11 @@
 	position: absolute;
 	right: -8.75rem;
 	top: 3.625rem;
+	@include mobile {
+		width: 25rem;
+		top: 20rem;
+		right: -3.5rem;
+	}
 }
 .robot img {
 	width: 100%;
@@ -102,9 +132,16 @@
 .info {
 	display: flex;
 	align-items: center;
+	@include mobile {
+		display: block;
+	}
 }
 .presale-btn {
 	width: 17.3125rem;
 	margin-left: -0.3125rem;
+	@include mobile {
+		width: 100%;
+		margin-left: 0;
+	}
 }
 </style>
