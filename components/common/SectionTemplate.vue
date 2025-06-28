@@ -10,11 +10,15 @@
 			<div class="line line-2" />
 
 			<div class="box">
-				<SvgSectionLinesLeft class="lines left-lines" />
+				<SvgSectionLinesLeft class="lines left-lines desk" />
+				<SvgSectionLinesLeftMob class="lines left-lines mob" />
+
 				<div class="content">
 					<slot />
 				</div>
-				<SvgSectionLinesRight class="lines right-lines" />
+
+				<SvgSectionLinesRight class="lines right-lines desk" />
+				<SvgSectionLinesRightMob class="lines right-lines mob" />
 			</div>
 		</div>
 	</section>
@@ -44,15 +48,20 @@
 }
 .content {
 	position: relative;
-	border-left: .0625rem solid var(--c-grey);
-	border-right: .0625rem solid var(--c-grey);
 	padding: 2.5rem;
+
+	@include mobile {
+		padding: .75rem;
+	}
 }
 .lines {
 	width: 2.5rem;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+	@include mobile {
+		width: 1.25rem;
+	}
 }
 .left-lines {
 	left: 0;
@@ -71,21 +80,33 @@
 	top: .0313rem;
 	left: 2.5313rem;
 	transform: translate(-50%, -50%);
+	@include mobile {
+		left: 1.22rem;
+	}
 }
 .square-2 {
 	top: .0313rem;
 	right: 2.5313rem;
 	transform: translate(50%, -50%);
+	@include mobile {
+		right: 1.22rem;
+	}
 }
 .square-3 {
 	bottom: .0313rem;
 	left: 2.5313rem;
 	transform: translate(-50%, 50%);
+	@include mobile {
+		left: 1.22rem;
+	}
 }
 .square-4 {
 	bottom: .0313rem;
 	right: 2.5313rem;
 	transform: translate(50%, 50%);
+	@include mobile {
+		right: 1.22rem;
+	}
 }
 .line {
 	position: absolute;
@@ -99,8 +120,14 @@
 }
 .line-1 {
 	left: 2.4rem;
+	@include mobile {
+		left: 1.1rem;
+	}
 }
 .line-2 {
 	right: 2.4rem;
+	@include mobile {
+		right: 1.1rem;
+	}
 }
 </style>
