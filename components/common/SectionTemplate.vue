@@ -24,6 +24,9 @@
 <style scoped lang='scss'>
 .section {
 	padding: 3.125rem 0;
+	@include mobile {
+		padding: 1.5rem 0;
+	}
 }
 .container {
 	position: relative;
@@ -34,6 +37,10 @@
 	overflow: hidden;
 	border-top: .0625rem solid var(--c-grey);
 	border-bottom: .0625rem solid var(--c-grey);
+
+	@include mobile {
+		padding: 0 1.25rem;
+	}
 }
 .content {
 	position: relative;
