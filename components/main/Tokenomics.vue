@@ -14,7 +14,8 @@
           <img src="/images/coin.png" alt="">
         </div>
         <div class="right">
-					<SvgTokenomicsBox />
+					<SvgTokenomicsBox class="desk" />
+					<SvgTokenomicsBoxMob class="mob" />
 
 					<div class="info-content">
 						<div class="info-left">
@@ -110,7 +111,14 @@ const items = [
 	margin-bottom: -3.5rem;
 	@include mobile {
 		width: 100%;
-		margin: 0;
+		margin-left: 0.8rem;
+		margin-top: -2.5rem;
+		margin-bottom: -1rem;
+	}
+}
+.left {
+	@include mobile {
+		order: 2;
 	}
 }
 .right {
@@ -120,6 +128,7 @@ const items = [
 	@include mobile {
 		flex: 1;
 		left: 0;
+		order: 1;
 	}
 }
 .info-content {
@@ -129,6 +138,11 @@ const items = [
 	left: 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	@include mobile {
+		top: .875rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
 }
 .info-item {
 	display: flex;
@@ -136,14 +150,30 @@ const items = [
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 2.5rem;
+	@include mobile {
+		height: 3.5625rem;
+		padding: 0;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 }
 .info-item p:nth-child(1) {
 	font-size: 1.5rem;
 	line-height: 1.75rem;
+	@include mobile {
+		font-size: .75rem;
+		line-height: 1rem;
+		margin-bottom: 0.5rem;
+	}
 }
 .info-item p:nth-child(2) {
 	font-size: 2rem;
 	line-height: 1.75rem;
 	color: var(--c-accent);
+	@include mobile {
+		font-size: 1rem;
+		line-height: 100%;
+	}
 }
 </style>

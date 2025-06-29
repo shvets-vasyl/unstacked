@@ -13,6 +13,7 @@
 
       <div class="content">
         <div class="links">
+					<p class="links-title mob">Links</p>
           <div class="link-items">
             <a
               v-for="({ text, link }, i) in links"
@@ -114,9 +115,15 @@ const docs = [
 }
 .footer-title {
   margin-bottom: 2rem;
+	@include mobile {
+		margin-bottom: 1.5rem;
+	}
 }
 .descr {
   margin-bottom: 3.375rem;
+	@include mobile {
+		margin-bottom: 2.5rem;
+	}
 }
 .link {
   color: var(--c-accent);
@@ -126,18 +133,35 @@ const docs = [
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 2.5rem;
+	@include mobile {
+		flex-direction: column;
+	}
 }
 .presale-btn {
 	width: 9.375rem;
+	@include mobile {
+		width: 100%;
+		margin-top: 1.5rem;
+	}
 }
 .link-items, .docs-items {
 	display: flex;
 	gap: 1.5rem;
+	@include mobile {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		width: 100%;
+	}
 }
 .socials {
 	display: flex;
 	gap: 1.5rem;
 	margin-bottom: 6.5rem;
+	@include mobile {
+		justify-content: center;
+		margin-bottom: 2.5rem;
+	}
 }
 .socials a {
 	width: 2.5rem
@@ -145,5 +169,23 @@ const docs = [
 .descr2, .copy {
 	color: var(--c-grey2);
 	margin-bottom: 1rem;
+}
+.copy {
+	@include mobile {
+		margin-bottom: 2.5rem;
+	}
+}
+.links-title {
+	color: var(--c-grey2);
+	font-size: .875rem;
+	font-family: var(--font-semibold);
+	line-height: 1.125rem;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+.docs-items {
+	@include mobile {
+		padding-bottom: 1rem;
+	}
 }
 </style>
