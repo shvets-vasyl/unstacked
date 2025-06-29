@@ -17,7 +17,6 @@
 			</p>
 
 
-
 			<div class="content">
 				<SvgSumBox class="desk" />
 				<SvgSumBoxMob class="mob" />
@@ -29,26 +28,16 @@
 							<SvgSumStageMob class="mob" />
 
 							<div class="stage-content">
-								<p class="stage-text p2">Stage 9</p>
+								<p class="stage-text p2">Stage 1</p>
 								<p class="stage-price p2">${{ stagePrices[0] }}</p>
 							</div>
 						</div>
 						<div class="current">
 							<CommonBox>
-								<div class="current-info" @click="isOpen = !isOpen">
-									<p class="current-text p2">Stage {{ selectedStageIndex + 9 }} (Current):</p>
-									<p class="current-price p1">${{ stagePrices[selectedStageIndex]}}</p>
+								<div class="current-info">
+									<p class="current-text p2">Stage 19 (Current):</p>
+									<p class="current-price p1">${{ currentStagePrice }}</p>
 								</div>
-
-								<ul v-if="isOpen" class="dropdown" data-lenis-prevent>
-									<li
-										v-for="(price, index) in stagePrices"
-										:key="index"
-										@click.stop="selectStage(index)"
-									>
-										Stage {{ index + 9 }} — ${{ price }}
-									</li>
-								</ul>
 							</CommonBox>
 						</div>
 						<div class="listing">
@@ -119,15 +108,10 @@ const stagePrices = [
   0.005242,
 ];
 
-const isOpen = ref(false)
-const selectedStageIndex = ref(0)
+// const currentStagePrice = stagePrices[18];
+const currentStagePrice = stagePrices[18];
 
-function selectStage(index: number) {
-  selectedStageIndex.value = index
-  isOpen.value = false
-}
-
-const tokens = computed(() => Number(inputValue.value || 0) / stagePrices[selectedStageIndex.value])
+const tokens = computed(() => Number(inputValue.value || 0) / currentStagePrice);
 
 const result = computed(() => {
   const futurePrice = stagePrices[stagePrices.length - 1];
@@ -238,7 +222,6 @@ const result = computed(() => {
 	align-items: center;
 	width: 100%;
 	font-family: var(--font-bold);
-	cursor: pointer;
 }
 .current-info p:first-child {
 	color: var(--c-grey2);
@@ -329,44 +312,4 @@ const result = computed(() => {
 		transform: rotate(90deg);
 	}
 }
-
-
-.custom-select {
-  position: relative;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  padding: 8px;
-  width: 250px;
-  background: white;
-}
-
-.selected {
-  font-weight: bold;
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-	margin-top: .125rem;
-  left: 0;
-  width: 100%;
-  max-height: 17.1875rem;
-  overflow-y: auto;
-  border: .0625rem solid var(--c-grey);
-	background: var(--c-black);
-  z-index: 1000;
-}
-
-.dropdown li {
-  padding: .5rem;
-  border-bottom: .0625rem solid var(--c-grey);
-	cursor: pointer;
-	font-size: .875rem;
-}
-
-.dropdown li:hover {
-  background: var(--c-white);
-	color: var(--c-black);
-}
-
 </style>
