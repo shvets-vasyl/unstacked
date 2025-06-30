@@ -68,6 +68,7 @@
 							<SvgFieldMob class="mob" />
 
 							<p class="p1 field-text">Enter Amount</p>
+							<p class="p1 field-currency">$</p>
 							<input
 								class="input"
 								type="number"
@@ -85,6 +86,7 @@
 							<SvgFieldMob class="mob" />
 
 							<p class="p1 field-text">You Receive</p>
+							<p class="p1 field-currency">$</p>
 							<input
 								class="input"
 								readonly
@@ -310,7 +312,7 @@ const result = computed(() => {
   color: var(--c-white);
   font-size: 0.875rem;
 
-	padding: .125rem 1rem 0;
+	padding: .125rem 1rem 0 1.6rem;
 }
 .input::placeholder {
   color: var(--c-grey2);
@@ -368,5 +370,12 @@ const result = computed(() => {
   background: var(--c-white);
 	color: var(--c-black);
 }
-
+.field-currency {
+	position: absolute;
+	top: 50%;
+	left: 1rem;
+	margin-top: .0313rem;
+	transform: translateY(-50%);
+	font-size: 0.875rem;
+}
 </style>
